@@ -8,15 +8,71 @@ Learning Objectives
 
 The hands-on project on Container Orchestration using Kubernetes is divided into the following tasks:
 
-Task 1: Create and deploy your first pod in your Kubernetes cluster
+## Task 1: Create and deploy your first pod in your Kubernetes cluster
+### Execute Commands on Terminal:
+    mkdir yml  
+    cd yml  
+    vi nginx_pod.yml
+   
+Enter into Insert mode with Press Esc+I
 
-Task 2: Create and deploy replication controller in your cluster to maintain the state of your pods
+  
+### Inside nginx_pod.yml
+    apiVersion: v1    
+    kind: Pod    
+    metadata:     
+            name: my-nginx-pod            
+    spec:    
+            containers:            
+                      - name: my-nginx                      
+                        image: nginx
 
-Task 3: Enable access to an application running in your pod through NodePort service 
+Save the file with ESC and :wq!
 
-Task 4: Create your first deployment in Kubernetes cluster
+### Execute Commands on Terminal
+    sudo minikube start --vm-driver=none  ---> kubectl configured to use minikube
+    
+    sudo kubectl apply -f nginx_pod.yml ---> pod/my-nginx-pod created
+    
+    sudo kubectl get pods --->  display running pods
 
-Task 5: Perform rolling updates and rollbacks in Kubernetes
+## Task 2: Create and deploy replication controller in your cluster to maintain the state of your pods
+### Execute Commands on Terminal
+
+    clear
+    vi nginx_rc.yml
+
+Enter into Insert mode with Press Esc+I
+
+### Inside nginx_rc.yml
+
+    apiVersion: v1
+    kind: ReplicationController
+    metadata:  
+            name: my-nginx-rc
+    spec: 
+            replicas: 10
+            selector: 
+                    app: nginx
+            template: 
+                    metadata: 
+                            name: my-nginx-pod
+                            labels: 
+                                  app: nginx
+                    spec:
+                            containers:
+                                      - name: nginx
+                                        image: nginx
+                                    
+Save the file with ESC and :wq!
+
+### Execute Commands on Terminal
+    sudo kubectl apply -f nginx_rc.yml  ---> replicationcontroller/my-nginx-rc created
+
+
+- Task 3: Enable access to an application running in your pod through NodePort service
+- Task 4: Create your first deployment in Kubernetes cluster
+- Task 5: Perform rolling updates and rollbacks in Kubernetes
 
 ## [2. Monitoring Kubernetes Cluster using Prometheus and Grafana](https://github.com/gjkaur/Guided-Projects-Coursera-Kubernetes/tree/main/Monitoring%20Kubernetes%20Cluster%20using%20Prometheus%20and%20Grafana)
 
