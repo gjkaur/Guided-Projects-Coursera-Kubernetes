@@ -2,6 +2,22 @@
 
 ## [1. Container Orchestration using Kubernetes](https://github.com/gjkaur/Guided-Projects-Coursera-Kubernetes/tree/main/Container%20Orchestration%20using%20Kubernetes)
 
+Learning Objectives
+- Understand and create various Kubernetes objects like pods, replication controller, deployment and services.
+- Understand rolling updates and rollbacks in Kubernetes
+
+The hands-on project on Container Orchestration using Kubernetes is divided into the following tasks:
+
+Task 1: Create and deploy your first pod in your Kubernetes cluster
+
+Task 2: Create and deploy replication controller in your cluster to maintain the state of your pods
+
+Task 3: Enable access to an application running in your pod through NodePort service 
+
+Task 4: Create your first deployment in Kubernetes cluster
+
+Task 5: Perform rolling updates and rollbacks in Kubernetes
+
 ## [2. Monitoring Kubernetes Cluster using Prometheus and Grafana](https://github.com/gjkaur/Guided-Projects-Coursera-Kubernetes/tree/main/Monitoring%20Kubernetes%20Cluster%20using%20Prometheus%20and%20Grafana)
 
 ## [3. Containerised app development with Azure Kubernetes Service](https://github.com/gjkaur/Guided-Projects-Coursera-Kubernetes/tree/main/Containerised%20app%20development%20with%20Azure%20Kubernetes%20Service)
